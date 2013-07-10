@@ -240,6 +240,7 @@ class (Functor query, Applicative query, Monad query) =>
   min_     :: (PersistField a, PersistField b) => expr (Value a) -> expr (Value b)
   max_     :: (PersistField a, PersistField b) => expr (Value a) -> expr (Value b)
   avg_     :: (PersistField a, PersistField b) => expr (Value a) -> expr (Value b)
+  lower_   :: (PersistField a, PersistField b) => expr (Value a) -> expr (Value b)
 
   -- | @LIKE@ operator.
   like :: (PersistField s, IsString s) => expr (Value s) -> expr (Value s) -> expr (Value Bool)

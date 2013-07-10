@@ -319,6 +319,11 @@ main = do
           ret <- select $ return $ round_ (val (16.2 :: Double))
           liftIO $ ret `shouldBe` [ Value (16 :: Double) ]
 
+      it "works with lower_" $
+        run $ do
+          ret <- select $ return $ lower_ (val ("FOOBAR" :: String))
+          liftIO $ ret `shouldBe` [ Value ("foobar" :: String) ]
+
       it "works with isNothing" $
         run $ do
           _   <- insert' p1
